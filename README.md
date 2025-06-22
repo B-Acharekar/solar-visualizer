@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🌌 Solar System Visualizer
 
-First, run the development server:
+**Solar System Visualizer** is an interactive 3D and 2D web experience built using modern web technologies to explore planets, moons, and the sun. It provides beautiful orbital animations, celestial data, and full 3D inspection of planetary bodies—all powered by real NASA data.
+
+## 🚀 Demo
+
+Live preview: [https://solar-visualizer.vercel.app](https://solar-visualizer.vercel.app)
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech | Usage |
+|------|-------|
+| **Next.js 15 (App Router)** | Full-stack React framework |
+| **React Three Fiber + Drei** | 3D graphics and orbital rendering |
+| **TypeScript** | Type safety across frontend and data models |
+| **Tailwind CSS** | Utility-first styling |
+| **Vercel** | Hosting and CI/CD |
+
+---
+
+## ✨ Features
+
+- 🌍 Interactive 3D orbiting planets and moons
+- 🌙 Zoom, rotate, and inspect celestial bodies in real-time
+- 🧠 Info panel with real-world planetary data (mass, gravity, moons, etc.)
+- 🧭 Switch between 3D and 2D views
+- 🧑‍🚀 Smooth camera controls with OrbitControls
+- 📱 Fully responsive and mobile-friendly
+- 🔄 Scalable design for future planets/moons/asteroids
+
+---
+
+## 🧑‍💻 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- Git
+
+### Installation
+
+```bash
+git clone https://github.com/B-Acharekar/solar-visualizer.git
+cd solar-visualizer
+npm install
+````
+
+### Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Deployment
 
-## Learn More
+This project is ready for **Vercel** deployment out-of-the-box.
 
-To learn more about Next.js, take a look at the following resources:
+To deploy:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your code to GitHub.
+2. Import the repo on [vercel.com](https://vercel.com).
+3. It will auto-detect the Next.js setup and deploy.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📂 Folder Structure (Simplified)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+  components/        # UI + 3D canvas elements
+  lib/               # Planet data, NASA API integration
+  app/               # Next.js App Router structure
+  styles/            # Tailwind config and globals
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Open an issue or fork and submit a PR.
+
+
