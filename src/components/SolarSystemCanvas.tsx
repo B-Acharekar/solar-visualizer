@@ -142,12 +142,14 @@ export default function SolarSystemCanvas() {
           onClose={() => setSelectedPlanet(null)}
         />
       )}
-      <Controlbar
-        timeScale={timeScale}
-        setTimeScale={setTimeScale}
-        viewMode={viewMode}
-        setViewMode={setViewMode}
-      />
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 w-full sm:max-w-md sm:px-0">
+        <Controlbar
+          timeScale={timeScale}
+          setTimeScale={setTimeScale}
+          viewMode={viewMode}
+          setViewMode={setViewMode}
+        />
+      </div>
     </div>
   )
 }
