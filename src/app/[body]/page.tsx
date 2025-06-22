@@ -1,24 +1,19 @@
-import PlanetViewer from '@/components/PlanetViewer'
+import type { Metadata } from 'next'
 import { getBodyData } from '@/lib/nasa'
+import PlanetViewer from '@/components/PlanetViewer'
 import Link from 'next/link'
 import { HiArrowLeft } from 'react-icons/hi'
-import { Metadata } from 'next'
 
-type PageProps = {
-  params: {
-    body: string
-  }
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ body: string }> }): Promise<Metadata> {
+  const { body } = await params
   return {
-    title: `${params.body} | Solar System Explorer`,
+    title: `${body} | Solar System Explorer`,
   }
 }
 
-export default async function dataPage({ params }: { params: { body: string } }) {
-  const data = await getBodyData(params.body)
-
+export default async function Page({ params }: { params: Promise<{ body: string }> }) {
+  const { body } = await params
+  const data = await getBodyData(body)
   return (
     <main className="min-h-screen bg-black text-white px-6 py-12">
       {/* 🔙 Back Button */}
