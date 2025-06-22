@@ -5,7 +5,7 @@
 
 ## 🚀 Demo
 
-Live preview: [(https://solar-visualizer-ro2nz8269-b-acharekars-projects.vercel.app/)](https://solar-visualizer-ro2nz8269-b-acharekars-projects.vercel.app))
+Live preview: [https://solar-visualizer.vercel.app](https://solar-visualizer.vercel.app)
 
 ---
 
