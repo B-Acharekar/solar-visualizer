@@ -11,12 +11,35 @@ interface Props {
   onClose: () => void
 }
 
+interface BodyInfo {
+  name: string
+  slug: string
+  type: string
+  diameter_km: number
+  mass_kg: number
+  gravity: number
+  orbital_speed?: number // ← make optional
+  orbital_period_days?: number
+  distance_from_sun_km?: number
+  moons: number
+  atmosphere?: string[]
+  discovered: string
+  hasMoon?: boolean
+  distance?: number
+  size?: number
+  speed?: number
+  texture?: string
+  color?: string
+}
+
 export default function InfoPanel({ planetName, onClose }: Props) {
-  const [body, setBody] = useState<any>(null)
+  const [body, setBody] = useState<BodyInfo | null>(null)
 
   useEffect(() => {
     const allBodies = [...planetData, sunData]
-    const match = allBodies.find(obj => obj.name.toLowerCase() === planetName.toLowerCase())
+    const match = allBodies.find(
+  (obj) => obj.name.toLowerCase() === planetName.toLowerCase()
+) as BodyInfo | null
     setBody(match || null)
   }, [planetName])
 
@@ -37,12 +60,11 @@ export default function InfoPanel({ planetName, onClose }: Props) {
         <li><span className="font-semibold text-white">Mass:</span> {body.mass_kg.toExponential(2)} kg</li>
         <li><span className="font-semibold text-white">Gravity:</span> {body.gravity} m/s²</li>
 
-        {/* Only show orbital info if not the Sun */}
         {'orbital_speed' in body && (
           <>
             <li><span className="font-semibold text-white">Orbital Speed:</span> {body.orbital_speed} km/s</li>
             <li><span className="font-semibold text-white">Orbital Period:</span> {body.orbital_period_days} days</li>
-            <li><span className="font-semibold text-white">Distance from Sun:</span> {body.distance_from_sun_km.toLocaleString()} km</li>
+            <li><span className="font-semibold text-white">Distance from Sun:</span> {body.distance_from_sun_km?.toLocaleString()} km</li>
           </>
         )}
 
@@ -57,12 +79,12 @@ export default function InfoPanel({ planetName, onClose }: Props) {
             body.slug === 'moon'
               ? '/moon'
               : body.slug === 'sun'
-                ? '/sun'
-                : `/${body.slug}`
+              ? '/sun'
+              : `/${body.slug}`
           }
           className="inline-block text-blue-400 hover:text-blue-300 underline transition"
         >
-          View {body.name} in full 3D →
+          View {body.name} in full 3D
         </Link>
       </div>
     </div>
